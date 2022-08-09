@@ -21,9 +21,6 @@ export default function AddToCal() {
                 <a href="https://www.addevent.com/event/Qq14641197+outlookcom" title="Outlook.com" target="_blank" style={{display:'inline'}} rel="noreferrer">
                     <img src="https://cdn.addevent.com/libs/imgs/icon-emd-share-outlookcom-t1.png" alt="Outlook.com" width="45" border="0" style={{width:'45px', display:'inline'}} />
                 </a>
-                <a href="https://www.addevent.com/event/Qq14641197+yahoo" title="Yahoo" target="_blank" rel="noreferrer">
-                    <img src="https://cdn.addevent.com/libs/imgs/icon-emd-share-yahoo-t1.png" alt="Yahoo" width="45" border="0" style={{width:'45px', display:'inline'}} />
-                </a>
             </p>
         </span>
     );

@@ -214,9 +214,9 @@ export default function WorkshopSignUp() {
             alignItems: "center",
           }}
         >
-          <img src="./LogoIncluyoWeb.png" alt="Logo" width="50%" />
+          {/* <img src="./LogoIncluyoWeb.png" alt="Logo" width="50%" /> */}
 
-          <span style={{ textAlign: "center", marginTop: "20px" }}>
+          <span style={{ textAlign: "center" }}>
             <Typography component="h1" variant="h5">
               Taller: Sexualidad Sin Límites
             </Typography>
