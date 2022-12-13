@@ -153,7 +153,7 @@ export default function SignUp() {
       })
       .then(() => {
         const ACCESS_TOKEN =
-          'EAAGkpnC4TqEBABja13lfJaAzwG35wf2FKnZCCgb2ZARRMwpZBS77u31xkCUAdPGXCSVI92io5mZCZByESg35wNV8WtbmdilfnPJ7LEs6buq2zeABEdZCgZAACDF25LrFvvHQbJDOEKFyHxZBmz48T2nVZCTMyVGsZAnfHzr998ydMZA25bquBrmiAP3imgGvVYSsvg2K2jBzHlwyZBfyIXZCiMmde';
+          'EAAGkpnC4TqEBALEIMUleF3fusxVeJ0DU4psvVmZCs4RxRWmTsel12a5IKB4Lo377nAleFYA5jfSF1ZCXIcJTfOu0naeOnQY9TOemvPCzUROHflfZCOExZAtZAzegVHNzZBpFTTsLZChGp4qohmZCZCQ4t30Fx39nlFPrO3N5kdHvDaNxkJDgVKCHh4JdZCjkGKu8JrsUl0Jhm9I87hTJAVgHqn';
         const templateName = 'incluyo_cdc_confirmation';
         const args = [
           {
