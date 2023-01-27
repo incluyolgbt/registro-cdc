@@ -153,7 +153,7 @@ export default function SignUp() {
       })
       .then(() => {
         const ACCESS_TOKEN =
-          'EAAGkpnC4TqEBALEIMUleF3fusxVeJ0DU4psvVmZCs4RxRWmTsel12a5IKB4Lo377nAleFYA5jfSF1ZCXIcJTfOu0naeOnQY9TOemvPCzUROHflfZCOExZAtZAzegVHNzZBpFTTsLZChGp4qohmZCZCQ4t30Fx39nlFPrO3N5kdHvDaNxkJDgVKCHh4JdZCjkGKu8JrsUl0Jhm9I87hTJAVgHqn';
+          'EAAGkpnC4TqEBAP5SMhCyXoFzldJDxHvxzPhgLY8FVQ0eBYGWw0E9OReWgVKWh6XlYSB4sH9STF9CR53Hc1d1Qe4BvhsNYdW1AZBZC9ZAM5VIrBRhZA4CLrF4XZCgvEoZC2zn6ZBZBDxqx2V5GdpsxGAzEQHpHuvAbh6mCc1wLeIoiSPLPDa39pAYnJ8RLZBKYZB6ptdiVA2fqj7dwCUkiM5LRQ';
         const templateName = 'incluyo_cdc_confirmation';
         const args = [
           {
@@ -165,7 +165,7 @@ export default function SignUp() {
               },
               {
                 type: 'text',
-                text: '13 de diciembre',
+                text: 'lunes, 30 de enero',
               },
               {
                 type: 'text',
@@ -173,11 +173,11 @@ export default function SignUp() {
               },
               {
                 type: 'text',
-                text: '815 225 22799 ',
+                text: '867 9213 0728 ',
               },
               {
                 type: 'text',
-                text: '698644',
+                text: '283669',
               },
             ],
           },
@@ -188,7 +188,7 @@ export default function SignUp() {
             parameters: [
               {
                 type: 'text',
-                text: '81522522799?pwd=a2E3UmQrYitEU0lieHFKTFlWS2J4UT09',
+                text: '86792130728?pwd=RXhyZCswUEpZUnBEY3d6N2pEM0hPdz09',
               },
             ],
           },
