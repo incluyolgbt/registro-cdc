@@ -19,6 +19,7 @@ import Avatar from '@mui/material/Avatar';
 import CheckIcon from '@mui/icons-material/Check';
 import { green } from '@mui/material/colors';
 import 'react-phone-number-input/style.css';
+import Closed from './Closed';
 
 const theme = createTheme();
 
@@ -164,19 +165,19 @@ export default function SignUp() {
               },
               {
                 type: 'text',
-                text: 'lunes, 30 de enero',
+                text: process.env.REACT_APP_DATE,
               },
               {
                 type: 'text',
-                text: '19:00',
+                text: process.env.REACT_APP_TIME,
               },
               {
                 type: 'text',
-                text: '867 9213 0728 ',
+                text: process.env.REACT_APP_ZOOM_ID,
               },
               {
                 type: 'text',
-                text: '283669',
+                text: process.env.REACT_APP_ZOOM_PW,
               },
             ],
           },
@@ -187,7 +188,7 @@ export default function SignUp() {
             parameters: [
               {
                 type: 'text',
-                text: '86792130728?pwd=RXhyZCswUEpZUnBEY3d6N2pEM0hPdz09',
+                text: process.env.REACT_APP_ZOOM_URL,
               },
             ],
           },
@@ -297,6 +298,10 @@ export default function SignUp() {
       setDisableSend(true);
     }
   }, [privacyCheck]);
+
+  if (process.env.REACT_APP_OPEN !== 'true') {
+    return <Closed />;
+  }
 
   return (
     <ThemeProvider theme={theme}>

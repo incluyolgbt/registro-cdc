@@ -51,8 +51,9 @@ export default function Closed() {
 
           <span style={{ textAlign: 'center', marginTop: '10px' }}>
             <Typography component='h1' variant='subtitle1'>
-              Gracias por acompañarnos en nuestros <b>Círculos de Confianza</b>,
-              nos vemos en 2023 para seguir construyendo espacios seguros. 🏳️‍🌈🏳️‍⚧️
+              Gracias por acompañarnos en nuestro <b>Círculo de Confianza</b>,
+              el registro para la próxima sesión estará disponible en los
+              siguientes días. 🏳️‍🌈🏳️‍⚧️
               <br />
             </Typography>
           </span>
