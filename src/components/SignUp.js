@@ -152,8 +152,7 @@ export default function SignUp() {
         setOpen(true);
       })
       .then(() => {
-        const ACCESS_TOKEN =
-          'EAAGkpnC4TqEBAEzyTiotGBicyOFl6gq1OL0XVX8SnoZC0aElMwlqtApHVyT0SiHUq6PfmZClDQaghtEnXW3gpm0KZCBSXGz1iLYoDbq2UOiAJhozejKutIHN1VFa80ZBZBZB4WaQqFCAwVARD3iJBTZAfpsqS1B0WDd6sJJ7VEMUdE1EuOtGZCIsJsCrOjG5UhzE7e4haeddPiC6wNE9CZA7v';
+        const ACCESS_TOKEN = process.env.REACT_APP_WAPP_KEY;
         const templateName = 'incluyo_cdc_confirmation';
         const args = [
           {
@@ -258,17 +257,8 @@ export default function SignUp() {
           return response.json();
         })
         .then((response) => {
-          if (statusCode === 200) {
-            console
-              .log
-              // `✅ Mensaje enviado a ${contacts[i][0]}, ${contacts[i][1]}`
-              ();
-          } else {
-            console
-              .log
-              // `❌ Error al enviar a ${contacts[i][0]}, ${contacts[i][1]}`
-              ();
-            console.log(`   ${response.error.message}`);
+          if (statusCode !== 200) {
+            console.log(`${response.error.message}`);
             errorCount += 1;
           }
         })
@@ -278,7 +268,7 @@ export default function SignUp() {
 
     result.then(() => {
       console.log(
-        `\n🟪 Mensaje enviado a ${numbers.length - errorCount} de ${
+        `Mensaje enviado a ${numbers.length - errorCount} de ${
           numbers.length
         } contactos.`
       );
