@@ -7,8 +7,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path='/' element={<SignUp />} /> */}
-        <Route path='/' element={<WorkshopSignUp />} />
+        <Route path='/' element={<SignUp />} />
+        <Route path='/rsvp' element={<WorkshopSignUp />} />
       </Routes>
     </BrowserRouter>
   );
