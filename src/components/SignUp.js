@@ -261,6 +261,8 @@ export default function SignUp() {
           if (statusCode !== 200) {
             console.log(`${response.error.message}`);
             errorCount += 1;
+          } else {
+            generatePromise(number, token, 'incluyo_support_disclamer', []);
           }
         })
         .catch((err) => console.log(err));
@@ -274,6 +276,8 @@ export default function SignUp() {
         } contactos.`
       );
     });
+
+    return result;
   };
 
   // ************* WAAP API *************
