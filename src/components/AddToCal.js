@@ -6,7 +6,7 @@ export default function AddToCal() {
       <p className='title'>Agregar a tu calendario</p>
       <p className='button-p'>
         <a
-          href='https://www.addevent.com/event/UT16910888+apple'
+          href='https://www.addevent.com/event/HC17174137+apple'
           title='Apple'
           target='_blank'
           style={{ display: 'inline' }}
@@ -21,7 +21,7 @@ export default function AddToCal() {
           />
         </a>
         <a
-          href='https://www.addevent.com/event/UT16910888+google'
+          href='https://www.addevent.com/event/HC17174137+google'
           title='Google'
           target='_blank'
           style={{ display: 'inline' }}
@@ -36,7 +36,7 @@ export default function AddToCal() {
           />
         </a>
         <a
-          href='https://www.addevent.com/event/UT16910888+office365'
+          href='https://www.addevent.com/event/HC17174137+office365'
           title='Office 365'
           target='_blank'
           style={{ display: 'inline' }}
@@ -51,7 +51,7 @@ export default function AddToCal() {
           />
         </a>
         <a
-          href='https://www.addevent.com/event/UT16910888+outlook'
+          href='https://www.addevent.com/event/HC17174137+outlook'
           title='Outlook'
           target='_blank'
           style={{ display: 'inline' }}
@@ -66,7 +66,7 @@ export default function AddToCal() {
           />
         </a>
         <a
-          href='https://www.addevent.com/event/UT16910888+outlookcom'
+          href='https://www.addevent.com/event/HC17174137+outlookcom'
           title='Outlook.com'
           target='_blank'
           style={{ display: 'inline' }}

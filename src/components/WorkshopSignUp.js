@@ -82,8 +82,8 @@ const AlertDialog = (props) => {
 
         <DialogContent sx={{ marginBottom: 2 }}>
           <DialogContentText id='alert-dialog-description'>
-            Hemos recibido tu registro. En breve te estaremos contactando para
-            enviarte los datos de acceso a la sesión.
+            Gracias por confirmar tu asistencia, recibimos tu registro con
+            éxito.
           </DialogContentText>
           <div style={{ textAlign: 'center', marginTop: '15px' }}>
             <AddToCal />
@@ -148,7 +148,7 @@ export default function WorkshopSignUp() {
     form.phone = form.countryCode.replace('+', '') + form.phone;
 
     fetch(
-      'https://incluyocdc-default-rtdb.firebaseio.com/registro-metodologia.json',
+      'https://incluyocdc-default-rtdb.firebaseio.com/registro-coctel-pride.json',
       {
         method: 'POST',
         headers: {
@@ -214,19 +214,19 @@ export default function WorkshopSignUp() {
 
           <span style={{ textAlign: 'center' }}>
             <Typography component='h1' variant='h4'>
-              Espacios Seguros para Juventudes LGBTQ+
+              Juventudes con Orgullo
             </Typography>
             <Typography component='h1' variant='h6'>
-              Presentación de la Metodología Incluyo
+              Cóctel LGBTQ+ - Pride 2023
             </Typography>
           </span>
 
           <span style={{ textAlign: 'center', marginTop: '10px' }}>
             <Typography component='h1' variant='subtitle1' style={brStyle}>
               <b>
-                Acompáñanos en el evento de presentación de nuestra primera
-                publicación: "Metodología para la Creación de Espacios para
-                Juventudes LGBTQ+".
+                Acompáñanos a celebrar el orgullo en este espacio de convivencia
+                para juventudes LGBTQ+ organizado por Incluyo y por It Gets
+                Better México.
               </b>
               <br />
             </Typography>
@@ -234,11 +234,11 @@ export default function WorkshopSignUp() {
 
           <span style={{ textAlign: 'center', margin: '5px' }}>
             <Typography component='h1' variant='subtitle1'>
-              4 de mayo de 2023, 7:00 PM (Hora CDMX)
-              {time && <br />}
-              {time}
+              2 de junio de 2023, 6:00 PM (Hora CDMX)
+              {/* {time && <br />}
+              {time} */}
               <br />
-              <img
+              {/* <img
                 src='./zoom.png'
                 alt='Zoom'
                 style={{
@@ -248,8 +248,8 @@ export default function WorkshopSignUp() {
                   top: '7px',
                   left: '-5px',
                 }}
-              />
-              <span>Evento Virtual</span>
+              /> */}
+              <span>Peligro Al Fondo - Lerdo de Tejada 2170, GDL.</span>
             </Typography>
           </span>
 
@@ -312,9 +312,8 @@ export default function WorkshopSignUp() {
 
               <Grid item xs={12}>
                 <span style={{ color: 'gray' }}>
-                  Te enviaremos los datos de acceso a la sesión a través de
-                  WhatsApp y correo electrónico. No compartiremos tu información
-                  con nadie.
+                  Te enviaremos un recordatorio y la ubicación del evento por
+                  WhatsApp. No compartiremos tu información con nadie.
                 </span>
               </Grid>
 
