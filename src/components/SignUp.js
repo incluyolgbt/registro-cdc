@@ -20,6 +20,11 @@ import CheckIcon from '@mui/icons-material/Check';
 import { green } from '@mui/material/colors';
 import 'react-phone-number-input/style.css';
 import Closed from './Closed';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import FormHelperText from '@mui/material/FormHelperText';
 
 const theme = createTheme();
 
@@ -80,7 +85,8 @@ const AlertDialog = (props) => {
         <DialogContent sx={{ marginBottom: 2 }}>
           <DialogContentText id='alert-dialog-description'>
             Hemos recibido tu registro. En breve te estaremos contactando por
-            WhatsApp para enviarte los datos de acceso al Círculo de Cofianza.
+            WhatsApp para enviarte la ubicación o datos de acceso al Círculo de
+            Cofianza.
           </DialogContentText>
         </DialogContent>
       </Dialog>
@@ -95,6 +101,7 @@ export default function SignUp() {
   const [nameError, setNameError] = useState(false);
   const [ageError, setAgeError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
+  const [modalityError, setModalityError] = useState(false);
   const [privacyCheck, setPrivacyCheck] = useState(false);
   const [disableSend, setDisableSend] = useState(true);
   const [countryCode, setCountryCode] = useState('+52');
@@ -112,6 +119,7 @@ export default function SignUp() {
       age: data.get('age'),
       countryCode: countryCode,
       phone: data.get('phone'),
+      modality: data.get('modality'),
       source: source,
     };
 
@@ -130,6 +138,11 @@ export default function SignUp() {
       errorFlag = true;
     }
 
+    if (!form.modality) {
+      setModalityError(true);
+      errorFlag = true;
+    }
+
     if (errorFlag) {
       console.log('ERROR');
       return;
@@ -141,7 +154,7 @@ export default function SignUp() {
 
     form.phone = form.countryCode.replace('+', '') + form.phone;
 
-    fetch('https://incluyocdc-default-rtdb.firebaseio.com/registro.json', {
+    fetch('https://incluyocdc-default-rtdb.firebaseio.com/registro-jun.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -193,12 +206,12 @@ export default function SignUp() {
             ],
           },
         ];
-        sendTemplateRemiders([[form.name, form.phone]], {
-          token: ACCESS_TOKEN,
-          templateName,
-          args,
-          firstArgIsName: true,
-        });
+        // sendTemplateRemiders([[form.name, form.phone]], {
+        //   token: ACCESS_TOKEN,
+        //   templateName,
+        //   args,
+        //   firstArgIsName: true,
+        // });
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -392,9 +405,31 @@ export default function SignUp() {
               </Grid>
 
               <Grid item xs={12}>
+                <FormControl required error={modalityError}>
+                  <FormLabel>¿En qué modalidad participarás?</FormLabel>
+                  <RadioGroup name='modality' row>
+                    <FormControlLabel
+                      value='presencial'
+                      control={<Radio />}
+                      label='Presencial en GDL'
+                    />
+                    <FormControlLabel
+                      value='virtual'
+                      control={<Radio />}
+                      label='Virtual por Zoom'
+                    />
+                  </RadioGroup>
+                  <FormHelperText>
+                    {modalityError && 'Selecciona una modalidad.'}
+                  </FormHelperText>
+                </FormControl>
+              </Grid>
+
+              <Grid item xs={12}>
                 <span style={{ color: 'gray' }}>
-                  Te enviaremos los datos de acceso a la sesión de Zoom a través
-                  de WhatsApp. No compartiremos tu número con nadie.
+                  Te enviaremos la ubicación de nuestro espacio seguro o los
+                  datos de acceso a la sesión de Zoom a través de WhatsApp. No
+                  compartiremos tu número con nadie.
                 </span>
               </Grid>
 
