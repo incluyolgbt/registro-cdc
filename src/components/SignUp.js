@@ -257,6 +257,28 @@ export default function SignUp() {
           statusCode = response.status;
           return response.json();
         })
+
+        .then((response) => {
+          // TEMP
+          if (statusCode !== 200) {
+            console.log(`${response.error.message}`);
+            errorCount += 1;
+          } else {
+            const args2 = [
+              {
+                type: 'body',
+                parameters: [
+                  {
+                    type: 'text',
+                    text: 'https://registro.incluyo.lgbt/preguntas',
+                  },
+                ],
+              },
+            ];
+            return generatePromise(number, token, templateName, args2);
+          }
+        })
+
         .then((response) => {
           if (statusCode !== 200) {
             console.log(`${response.error.message}`);
