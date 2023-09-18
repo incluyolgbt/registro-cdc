@@ -80,7 +80,7 @@ const AlertDialog = (props) => {
         <DialogContent sx={{ marginBottom: 2 }}>
           <DialogContentText id='alert-dialog-description'>
             Hemos recibido tu registro. En breve te estaremos contactando por
-            WhatsApp para enviarte los datos de acceso al Círculo de Cofianza.
+            WhatsApp para enviarte los datos de acceso al Círculo de Confianza.
           </DialogContentText>
         </DialogContent>
       </Dialog>
