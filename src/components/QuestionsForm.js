@@ -169,10 +169,10 @@ export default function QuestionForm() {
           <span style={{ textAlign: 'center', marginTop: '10px' }}>
             <Typography component='h1' variant='subtitle1' style={brStyle}>
               <b>
-                ¿Qué es eso que siempre quisite saber sobre relaciones queer?
+                ¿Qué es eso que siempre quisiste saber sobre relaciones queer?
                 Puede ser una pregunta para que entre todes contestemos desde
                 nuestra experiencia comunitaria, o puede ser una pregunta
-                dirijida a les expertes en salud mental que nos acompañarán.
+                dirigida a les expertes en salud mental que nos acompañarán.
               </b>
               <br />
             </Typography>
