@@ -270,15 +270,19 @@ export default function SignUp() {
                 parameters: [
                   {
                     type: 'text',
-                    text: 'https://registro.incluyo.lgbt/preguntas',
+                    text: 'Relaciones Queer',
                   },
                 ],
               },
             ];
-            return generatePromise(number, token, templateName, args2);
+            return generatePromise(
+              number,
+              token,
+              'incluyo_submit_question',
+              args2
+            );
           }
         })
-
         .then((response) => {
           if (statusCode !== 200) {
             console.log(`${response.error.message}`);
