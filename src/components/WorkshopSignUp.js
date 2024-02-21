@@ -95,8 +95,6 @@ const AlertDialog = (props) => {
 };
 
 export default function WorkshopSignUp() {
-  const [time, setTime] = useState('');
-
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
@@ -117,7 +115,6 @@ export default function WorkshopSignUp() {
       name: data.get('firstName'),
       email: data.get('email'),
       pronouns: data.get('pronouns'),
-      countryCode: countryCode,
       phone: data.get('phone'),
       source: source,
     };
@@ -141,14 +138,10 @@ export default function WorkshopSignUp() {
       return;
     }
 
-    if (form.countryCode === '+54') {
-      form.countryCode = '+549';
-    }
-
     form.phone = form.countryCode.replace('+', '') + form.phone;
 
     fetch(
-      'https://incluyocdc-default-rtdb.firebaseio.com/registro-coctel-pride.json',
+      'https://incluyocdc-default-rtdb.firebaseio.com/registro-directorio.json',
       {
         method: 'POST',
         headers: {
@@ -170,23 +163,6 @@ export default function WorkshopSignUp() {
     const urlParams = new URLSearchParams(window.location.search);
     const sourceParam = urlParams.get('source');
     setSource(sourceParam);
-
-    let realDate = moment.tz('2023-05-04 19:00', 'America/Mexico_City');
-
-    let localTime = moment(realDate)
-      .local()
-      .format('D [de mayo de 2023], h:mm A zz');
-
-    if (!localTime.includes('7:00 PM')) {
-      setTime(
-        localTime +
-          '(Hora ' +
-          moment.tz.guess().split('/')[1].replace('_', ' ') +
-          ')'
-      );
-    } else {
-      setTime(null);
-    }
   }, []);
 
   useEffect(() => {
@@ -199,7 +175,7 @@ export default function WorkshopSignUp() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component='main' maxWidth='xs'>
+      <Container component='main' maxWidth='sm'>
         <CssBaseline />
 
         <Box
@@ -214,19 +190,17 @@ export default function WorkshopSignUp() {
 
           <span style={{ textAlign: 'center' }}>
             <Typography component='h1' variant='h4'>
-              Juventudes con Orgullo
-            </Typography>
-            <Typography component='h1' variant='h6'>
-              Cóctel LGBTQ+ - Pride 2023
+              Presentación del Directorio de Salud Mental LGBTQ+
             </Typography>
           </span>
 
           <span style={{ textAlign: 'center', marginTop: '10px' }}>
             <Typography component='h1' variant='subtitle1' style={brStyle}>
               <b>
-                Acompáñanos a celebrar el orgullo en este espacio de convivencia
-                para juventudes LGBTQ+ organizado por Incluyo y por It Gets
-                Better México.
+                Acompáñanos a la presentación oficial del proyecto más reciente
+                de Incluyo: el direcotrio que buscará ayudar a personas LGBTQ+ a
+                conectar con profesionistas de la salud mental con perspectiva
+                de diversidad.
               </b>
               <br />
             </Typography>
@@ -234,22 +208,11 @@ export default function WorkshopSignUp() {
 
           <span style={{ textAlign: 'center', margin: '5px' }}>
             <Typography component='h1' variant='subtitle1'>
-              2 de junio de 2023, 6:00 PM (Hora CDMX)
-              {/* {time && <br />}
-              {time} */}
+              29 de febrero de 2024, 5:00 PM (Hora CDMX)
               <br />
-              {/* <img
-                src='./zoom.png'
-                alt='Zoom'
-                style={{
-                  width: '25px',
-                  marginRight: '2px',
-                  position: 'relative',
-                  top: '7px',
-                  left: '-5px',
-                }}
-              /> */}
-              <span>Peligro Al Fondo - Lerdo de Tejada 2170, GDL.</span>
+              Auditorio CUCSH Belenes.
+              <br />
+              Av. José Parres Arias 150, San José del Bajío, Zapopan, Jal.
             </Typography>
           </span>
 
