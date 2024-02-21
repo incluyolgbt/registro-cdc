@@ -138,7 +138,7 @@ export default function WorkshopSignUp() {
       return;
     }
 
-    form.phone = form.countryCode.replace('+', '') + form.phone;
+    form.phone = countryCode.replace('+', '') + form.phone;
 
     fetch(
       'https://incluyocdc-default-rtdb.firebaseio.com/registro-directorio.json',
