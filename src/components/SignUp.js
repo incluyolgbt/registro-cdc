@@ -80,7 +80,7 @@ const AlertDialog = (props) => {
         <DialogContent sx={{ marginBottom: 2 }}>
           <DialogContentText id='alert-dialog-description'>
             Hemos recibido tu registro. En breve te estaremos contactando por
-            WhatsApp para enviarte los datos de acceso al Círculo de Confianza.
+            WhatsApp para enviarte la ubicación de nuestro espacio.
           </DialogContentText>
         </DialogContent>
       </Dialog>
@@ -141,65 +141,68 @@ export default function SignUp() {
 
     form.phone = form.countryCode.replace('+', '') + form.phone;
 
-    fetch('https://incluyocdc-default-rtdb.firebaseio.com/registro.json', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(form),
-    })
+    fetch(
+      'https://incluyocdc-default-rtdb.firebaseio.com/registro-presencial.json',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      }
+    )
       .then((response) => response.json())
       .then(() => {
         setOpen(true);
       })
-      .then(() => {
-        const ACCESS_TOKEN = process.env.REACT_APP_WAPP_KEY;
-        const templateName = 'incluyo_cdc_confirmation';
-        const args = [
-          {
-            type: 'body',
-            parameters: [
-              {
-                type: 'text',
-                text: 'amigue',
-              },
-              {
-                type: 'text',
-                text: process.env.REACT_APP_DATE,
-              },
-              {
-                type: 'text',
-                text: process.env.REACT_APP_TIME,
-              },
-              {
-                type: 'text',
-                text: process.env.REACT_APP_ZOOM_ID,
-              },
-              {
-                type: 'text',
-                text: process.env.REACT_APP_ZOOM_PW,
-              },
-            ],
-          },
-          {
-            type: 'button',
-            sub_type: 'url',
-            index: 0,
-            parameters: [
-              {
-                type: 'text',
-                text: process.env.REACT_APP_ZOOM_URL,
-              },
-            ],
-          },
-        ];
-        sendTemplateRemiders([[form.name, form.phone]], {
-          token: ACCESS_TOKEN,
-          templateName,
-          args,
-          firstArgIsName: true,
-        });
-      })
+      // .then(() => {
+      //   const ACCESS_TOKEN = process.env.REACT_APP_WAPP_KEY;
+      //   const templateName = 'incluyo_cdc_confirmation';
+      //   const args = [
+      //     {
+      //       type: 'body',
+      //       parameters: [
+      //         {
+      //           type: 'text',
+      //           text: 'amigue',
+      //         },
+      //         {
+      //           type: 'text',
+      //           text: process.env.REACT_APP_DATE,
+      //         },
+      //         {
+      //           type: 'text',
+      //           text: process.env.REACT_APP_TIME,
+      //         },
+      //         {
+      //           type: 'text',
+      //           text: process.env.REACT_APP_ZOOM_ID,
+      //         },
+      //         {
+      //           type: 'text',
+      //           text: process.env.REACT_APP_ZOOM_PW,
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       type: 'button',
+      //       sub_type: 'url',
+      //       index: 0,
+      //       parameters: [
+      //         {
+      //           type: 'text',
+      //           text: process.env.REACT_APP_ZOOM_URL,
+      //         },
+      //       ],
+      //     },
+      //   ];
+      //   sendTemplateRemiders([[form.name, form.phone]], {
+      //     token: ACCESS_TOKEN,
+      //     templateName,
+      //     args,
+      //     firstArgIsName: true,
+      //   });
+      // })
       .catch((error) => {
         console.error('Error:', error);
       });
@@ -323,16 +326,10 @@ export default function SignUp() {
           <img src='./LogoIncluyoWeb.png' alt='Logo' width='50%' />
 
           <span style={{ textAlign: 'center', marginTop: '10px' }}>
-            <Typography component='h1' variant='h5'>
-              Registro - Círculo de Confianza
-            </Typography>
-          </span>
-
-          <span style={{ textAlign: 'center', marginTop: '10px' }}>
             <Typography component='h1' variant='subtitle1'>
               <b>
-                Únete a nuestro espacio seguro digital para personas jóvenes
-                LGBTQ+, organizado por Incluyo.
+                Únete a nuestro espacio seguro presencial para personas LGBTQ+
+                en Guadalajara, Jalisco.
               </b>
               <br />
             </Typography>
@@ -393,8 +390,8 @@ export default function SignUp() {
 
               <Grid item xs={12}>
                 <span style={{ color: 'gray' }}>
-                  Te enviaremos los datos de acceso a la sesión de Zoom a través
-                  de WhatsApp. No compartiremos tu número con nadie.
+                  Te enviaremos la ubicación del evento por medio de WhatsApp.
+                  No compartiremos tu número con nadie.
                 </span>
               </Grid>
 
