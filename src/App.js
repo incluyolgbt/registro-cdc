@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignUp from "./components/SignUpHybrid";
+import SignUp from "./components/SignUp";
 import WorkshopSignUp from "./components/WorkshopSignUp";
 import Reminder from "./components/Reminder";
 

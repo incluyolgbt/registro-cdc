@@ -89,8 +89,8 @@ const AlertDialog = (props) => {
 };
 
 export default function SignUp() {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [date, setDate] = useState("27 de mayo de 2026");
+  const [time, setTime] = useState("19:00 horas");
 
   const [nameError, setNameError] = useState(false);
   const [ageError, setAgeError] = useState(false);
@@ -140,6 +140,8 @@ export default function SignUp() {
     }
 
     form.phone = form.countryCode.replace("+", "") + form.phone;
+
+    form.cdc = "cdc_mayo2026";
 
     fetch("https://incluyocdc-default-rtdb.firebaseio.com/registro.json", {
       method: "POST",
@@ -232,7 +234,7 @@ export default function SignUp() {
 
     return fetch(
       "https://graph.facebook.com/v15.0/107979732160205/messages",
-      options
+      options,
     );
   };
 
@@ -273,7 +275,7 @@ export default function SignUp() {
       console.log(
         `Mensaje enviado a ${numbers.length - errorCount} de ${
           numbers.length
-        } contactos.`
+        } contactos.`,
       );
     });
 
@@ -283,12 +285,12 @@ export default function SignUp() {
   // ************* WAAP API *************
 
   useEffect(() => {
-    fetch("https://incluyocdc-default-rtdb.firebaseio.com/cdcInfo.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setDate(data.date);
-        setTime(data.time);
-      });
+    // fetch("https://incluyocdc-default-rtdb.firebaseio.com/cdcInfo.json")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     // setDate(data.date);
+    //     // setTime(data.time);
+    //   });
 
     const urlParams = new URLSearchParams(window.location.search);
     const sourceParam = urlParams.get("source");
@@ -388,8 +390,8 @@ export default function SignUp() {
 
               <Grid item xs={12}>
                 <span style={{ color: "gray" }}>
-                  Te enviaremos la ubicación del evento por medio de WhatsApp.
-                  No compartiremos tu número con nadie.
+                  Te enviaremos la liga de Google Meet por medio de WhatsApp. No
+                  compartiremos tu número con nadie.
                 </span>
               </Grid>
 
