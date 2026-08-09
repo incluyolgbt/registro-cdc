@@ -89,7 +89,7 @@ const AlertDialog = (props) => {
 };
 
 export default function SignUp() {
-  const [date, setDate] = useState("27 de mayo de 2026");
+  const [date, setDate] = useState("19 de agosto de 2026");
   const [time, setTime] = useState("19:00 horas");
 
   const [nameError, setNameError] = useState(false);
